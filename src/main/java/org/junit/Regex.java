@@ -42,8 +42,20 @@ public class Regex {
         Pattern patternPass = Pattern.compile("[A-Za-z]{8,}");
         return patternPass.matcher(password).matches();
     }
+    /**
+     * This method is for compiling the input pattern for password
+     * 8 character and one upper case char match with pattern and return true;
+     */
     public boolean upperCasePassword(String upperCase) {
         Pattern patternPass1 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).+${8,}");
         return patternPass1.matcher(upperCase).matches();
+    }
+    /**
+     * This method is for compiling the input pattern for password min 8 character,
+     *  one upper case char, one numeric match with pattern and return true;
+     */
+    public boolean numericPassword(String numeric) {
+        Pattern patternPass2 = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9]).+${8,}");
+        return patternPass2.matcher(numeric).matches();
     }
 }

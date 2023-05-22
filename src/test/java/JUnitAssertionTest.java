@@ -54,4 +54,10 @@ public class JUnitAssertionTest {
         boolean result = regex.upperCasePassword("rahulKumar");
         Assert.assertTrue(result);
     }
+    @Test
+    public void whenGiven_Password2Proper_ShouldReturnTrue(){
+        Regex regex = new Regex();
+        boolean result = regex.numericPassword("rahul1Kumar");
+        Assert.assertTrue(result);
+    }
 }
