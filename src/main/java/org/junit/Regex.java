@@ -58,4 +58,12 @@ public class Regex {
         Pattern patternPass2 = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9]).+${8,}");
         return patternPass2.matcher(numeric).matches();
     }
+    /**
+     * This method is for compiling the input pattern for password min 8 character,
+     * one upper case char, one numeric and one special char match with pattern and return true;
+     */
+    public boolean specialCharacterPassword(String character) {
+        Pattern patternPass3 = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[-+_!@#$%^&*.,?]).+${8,}");
+        return patternPass3.matcher(character).matches();
+    }
 }

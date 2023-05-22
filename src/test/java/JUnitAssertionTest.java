@@ -48,16 +48,31 @@ public class JUnitAssertionTest {
         boolean result = regex.password("rahulkumar");
         Assert.assertTrue(result);
     }
+    /**
+     * This method is for test the one upper case password of 8 character regex pattern
+     */
     @Test
     public void whenGiven_Password1Proper_ShouldReturnTrue(){
         Regex regex = new Regex();
         boolean result = regex.upperCasePassword("rahulKumar");
         Assert.assertTrue(result);
     }
+    /**
+     * This method is for test the 1 numeric password of 8 character regex pattern
+     */
     @Test
     public void whenGiven_Password2Proper_ShouldReturnTrue(){
         Regex regex = new Regex();
         boolean result = regex.numericPassword("rahul1Kumar");
+        Assert.assertTrue(result);
+    }
+    /**
+     * This method is for test the 1 special character password of 8 character regex pattern
+     */
+    @Test
+    public void whenGiven_Password3Proper_ShouldReturnTrue() {
+        Regex regex = new Regex();
+        boolean result = regex.specialCharacterPassword("rahul@1Kr");
         Assert.assertTrue(result);
     }
 }
