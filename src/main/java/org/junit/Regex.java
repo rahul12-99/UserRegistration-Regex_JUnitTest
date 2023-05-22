@@ -26,4 +26,12 @@ public class Regex {
         Pattern patternEmail = Pattern.compile("[a-z]+[.]?[a-z]{0,}[@][a-z]+[.][a-z]{2,4}[.]?[a-z]{0,2}");
         return patternEmail.matcher(emailId).matches();
     }
+    /**
+     * This method is for compiling the input pattern for mobileNumber
+     * and match with pattern and return true;
+     */
+    public boolean mobileNumber(String mobNumber) {
+        Pattern patternMobile = Pattern.compile("^[0-9]{2}[ ][0-9]{10}$");
+        return patternMobile.matcher(mobNumber).matches();
+    }
 }

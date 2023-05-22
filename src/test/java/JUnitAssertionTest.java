@@ -30,4 +30,13 @@ public class JUnitAssertionTest {
         boolean result = regex.emailId("abc.xyz@bl.co.in");
         Assert.assertTrue(result);
     }
+    /**
+     * This method is for test the mobile number regex pattern
+     */
+    @Test
+    public void whenGiven_MobileNumberProper_ShouldReturnTrue(){
+        Regex regex = new Regex();
+        boolean result = regex.mobileNumber("91 9934691893");
+        Assert.assertTrue(result);
+    }
 }
