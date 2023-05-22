@@ -42,4 +42,8 @@ public class Regex {
         Pattern patternPass = Pattern.compile("[A-Za-z]{8,}");
         return patternPass.matcher(password).matches();
     }
+    public boolean upperCasePassword(String upperCase) {
+        Pattern patternPass1 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).+${8,}");
+        return patternPass1.matcher(upperCase).matches();
+    }
 }
