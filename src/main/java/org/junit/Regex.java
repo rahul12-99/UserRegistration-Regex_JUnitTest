@@ -23,7 +23,7 @@ public class Regex {
      * and match with pattern and return true;
      */
     public boolean emailId(String emailId) {
-        Pattern patternEmail = Pattern.compile("[a-z]+[.]?[a-z]{0,}[@][a-z]+[.][a-z]{2,4}[.]?[a-z]{0,2}");
+        Pattern patternEmail = Pattern.compile("[a-z-+0-9]+[.]?[a-z0-9]+[@][a-z0-9]+[.][a-z]{2,4}[.]?[a-z]{0,3}");
         return patternEmail.matcher(emailId).matches();
     }
     /**
@@ -66,4 +66,5 @@ public class Regex {
         Pattern patternPass3 = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[-+_!@#$%^&*.,?]).+${8,}");
         return patternPass3.matcher(character).matches();
     }
+
 }
