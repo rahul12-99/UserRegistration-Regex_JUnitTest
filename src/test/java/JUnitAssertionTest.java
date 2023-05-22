@@ -39,4 +39,13 @@ public class JUnitAssertionTest {
         boolean result = regex.mobileNumber("91 9934691893");
         Assert.assertTrue(result);
     }
+    /**
+     * This method is for test the password of 8 character regex pattern
+     */
+    @Test
+    public void whenGiven_PasswordProper_ShouldReturnTrue(){
+        Regex regex = new Regex();
+        boolean result = regex.password("rahulkumar");
+        Assert.assertTrue(result);
+    }
 }

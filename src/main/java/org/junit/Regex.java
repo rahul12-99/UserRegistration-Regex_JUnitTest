@@ -34,4 +34,12 @@ public class Regex {
         Pattern patternMobile = Pattern.compile("^[0-9]{2}[ ][0-9]{10}$");
         return patternMobile.matcher(mobNumber).matches();
     }
+    /**
+     * This method is for compiling the input pattern for password
+     * 8 character and match with pattern and return true;
+     */
+    public boolean password(String password) {
+        Pattern patternPass = Pattern.compile("[A-Za-z]{8,}");
+        return patternPass.matcher(password).matches();
+    }
 }
