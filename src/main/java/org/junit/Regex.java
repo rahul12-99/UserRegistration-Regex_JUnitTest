@@ -67,4 +67,12 @@ public class Regex {
         return patternPass3.matcher(character).matches();
     }
 
+    /**
+     * This method for analyse the mood if the test sentences contain sad should return sad
+     */
+    public String analyseMood(String mood) {
+        if (mood.contains("sad"))
+            return "sad";
+        return "happy";
+    }
 }

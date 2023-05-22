@@ -105,4 +105,13 @@ public class JUnitAssertionTest {
             Assert.assertFalse(result);
         }
     }
+    /**
+     * This method is for return happy or sad test
+     */
+    @Test
+    public void givenSentence_WhenContainsSad_ShouldPassTest() {
+        Regex regex = new Regex();
+        String mood = regex.analyseMood("this is a sad message");
+        Assert.assertEquals("sad", mood);
+    }
 }
