@@ -18,4 +18,12 @@ public class Regex {
         Pattern patternOne = Pattern.compile("[A-Z][a-z]{2,}");
         return patternOne.matcher(lastName).matches();
     }
+    /**
+     * This method is for compiling the input pattern for emailId
+     * and match with pattern and return true;
+     */
+    public boolean emailId(String emailId) {
+        Pattern patternEmail = Pattern.compile("[a-z]+[.]?[a-z]{0,}[@][a-z]+[.][a-z]{2,4}[.]?[a-z]{0,2}");
+        return patternEmail.matcher(emailId).matches();
+    }
 }

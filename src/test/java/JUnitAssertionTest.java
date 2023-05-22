@@ -21,4 +21,13 @@ public class JUnitAssertionTest {
         boolean result = regex.lastName("Kumar");
         Assert.assertTrue(result);
     }
+    /**
+     * This method is for test the email I'd regex pattern
+     */
+    @Test
+    public void whenGiven_EmailIdProper_ShouldReturnTrue(){
+        Regex regex = new Regex();
+        boolean result = regex.emailId("abc.xyz@bl.co.in");
+        Assert.assertTrue(result);
+    }
 }
