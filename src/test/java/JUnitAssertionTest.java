@@ -11,12 +11,10 @@ public class JUnitAssertionTest {
     public void whenGiven_NameProper_ShouldReturnTrue() {
         Regex regex = new Regex();
         try {
-            boolean result = regex.firstName("Rahul");
-            Assert.assertTrue(result);
+            regex.forFirstName.matchValue("Rahul");
         } catch (UserException e) {
             Assert.assertEquals("Enter correct name", e.getMessage());
         }
-
     }
 
     /**
@@ -26,8 +24,7 @@ public class JUnitAssertionTest {
     public void whenGiven_LastNameProper_ShouldReturnTrue() {
         Regex regex = new Regex();
         try {
-            boolean result = regex.lastName("Kumar");
-            Assert.assertTrue(result);
+            regex.forLastName.matchValue("Kumar");
         } catch (UserException e) {
             Assert.assertEquals("Enter correct last name", e.getMessage());
         }
@@ -37,11 +34,11 @@ public class JUnitAssertionTest {
      * This method is for test the email I'd regex pattern
      */
     @Test
-    public void whenGiven_EmailIdProper_ShouldReturnTrue() throws UserException {
+    public void whenGiven_EmailIdProper_ShouldReturnTrue() {
         Regex regex = new Regex();
         try {
-            boolean result = regex.emailId("abc.xyz@bl.co.in");
-            Assert.assertTrue(result);
+            regex.forEmailId.matchValue("abc.xyz@bl.co.in");
+
         } catch (UserException e) {
             Assert.assertEquals("Enter proper email id", e.getMessage());
         }
@@ -51,11 +48,10 @@ public class JUnitAssertionTest {
      * This method is for test the mobile number regex pattern
      */
     @Test
-    public void whenGiven_MobileNumberProper_ShouldReturnTrue() throws UserException {
+    public void whenGiven_MobileNumberProper_ShouldReturnTrue() {
         Regex regex = new Regex();
         try {
-            boolean result = regex.mobileNumber("91 9934691893");
-            Assert.assertTrue(result);
+            regex.forMobileNumber.matchValue("91 9934691893");
         } catch (UserException e) {
             Assert.assertEquals("Enter proper mobile number", e.getMessage());
         }
@@ -69,8 +65,7 @@ public class JUnitAssertionTest {
     public void whenGiven_PasswordProper_ShouldReturnTrue() throws UserException {
         Regex regex = new Regex();
         try {
-            boolean result = regex.password("rahulkumar");
-            Assert.assertTrue(result);
+            regex.forPassword.matchValue("rahulkumar");
         } catch (UserException e) {
             Assert.assertEquals("Enter minimum 8 character", e.getMessage());
         }
@@ -84,8 +79,7 @@ public class JUnitAssertionTest {
     public void whenGiven_Password1Proper_ShouldReturnTrue() throws UserException {
         Regex regex = new Regex();
         try {
-            boolean result = regex.upperCasePassword("rahulKumar");
-            Assert.assertTrue(result);
+            regex.forUpperCasePassword.matchValue("rahulKumar");
         } catch (UserException e) {
             Assert.assertEquals("Enter minimum one upper case character", e.getMessage());
         }
@@ -99,8 +93,7 @@ public class JUnitAssertionTest {
     public void whenGiven_Password2Proper_ShouldReturnTrue() throws UserException {
         Regex regex = new Regex();
         try {
-            boolean result = regex.numericPassword("rahul1Kumar");
-            Assert.assertTrue(result);
+            regex.forNumericPassword.matchValue("rahul1Kumar");
         } catch (UserException e) {
             Assert.assertEquals("Enter 1 upper case character and one numeric value", e.getMessage());
         }
@@ -114,8 +107,7 @@ public class JUnitAssertionTest {
     public void whenGiven_Password3Proper_ShouldReturnTrue() throws UserException {
         Regex regex = new Regex();
         try {
-            boolean result = regex.specialCharacterPassword("rahul@1Kr");
-            Assert.assertTrue(result);
+            regex.forSpecialCharacterPassword.matchValue("rahul@1Kr");
         } catch (UserException e) {
             Assert.assertEquals("Enter exactly one special character", e.getMessage());
         }
@@ -132,7 +124,7 @@ public class JUnitAssertionTest {
 
         Regex regex = new Regex();
         for (String validEmail : validEmails) {
-            boolean result = regex.emailId(validEmail);
+            boolean result = regex.forEmailId.matchValue(validEmail);
             Assert.assertTrue(result);
         }
     }
@@ -148,7 +140,7 @@ public class JUnitAssertionTest {
 
         Regex regex = new Regex();
         for (String inValidEmail : inValidEmails) {
-            boolean result = regex.emailId(inValidEmail);
+            boolean result = regex.forEmailId.matchValue(inValidEmail);
             Assert.assertFalse(result);
         }
     }

@@ -46,7 +46,7 @@ public class ParameterisedEmailTest {
     @Test
     public void givenEmail_WhenTested_ShouldPassAsExpected() throws UserException {
         Regex regex = new Regex();
-        boolean result = regex.emailId(this.emailToTest);
+        boolean result = regex.forEmailId.matchValue(this.emailToTest);
         Assert.assertEquals(this.expectedResult, result);
     }
 }
