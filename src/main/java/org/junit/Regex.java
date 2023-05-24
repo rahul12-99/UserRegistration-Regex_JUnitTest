@@ -6,65 +6,103 @@ public class Regex {
     /**
      * This method is for compiling the input pattern and match with pattern and return true;
      */
-    public boolean firstName(String firstName) {
+    public boolean firstName(String firstName) throws UserException{
         Pattern patternOne = Pattern.compile("[A-Z][a-z]{2,}");
-        return patternOne.matcher(firstName).matches();
+        try {
+            return patternOne.matcher(firstName).matches();
+        }catch (Exception e){
+            throw new UserException("Enter correct name");
+        }
+
     }
     /**
      * This method is for compiling the input pattern for last name
      * and match with pattern and return true;
      */
-    public boolean lastName(String lastName){
+    public boolean lastName(String lastName)throws UserException{
         Pattern patternOne = Pattern.compile("[A-Z][a-z]{2,}");
-        return patternOne.matcher(lastName).matches();
+        try {
+            return patternOne.matcher(lastName).matches();
+        }catch (Exception e){
+            throw new UserException("Enter correct last name");
+        }
+
     }
     /**
      * This method is for compiling the input pattern for emailId
      * and match with pattern and return true;
      */
-    public boolean emailId(String emailId) {
+    public boolean emailId(String emailId)throws UserException {
         Pattern patternEmail = Pattern.compile("[a-z-+0-9]+[.]?[a-z0-9]+[@][a-z0-9]+[.][a-z]{2,4}[.]?[a-z]{0,3}");
-        return patternEmail.matcher(emailId).matches();
+        try {
+            return patternEmail.matcher(emailId).matches();
+        }catch (Exception e){
+            throw new UserException("Enter proper email id");
+        }
+
     }
     /**
      * This method is for compiling the input pattern for mobileNumber
      * and match with pattern and return true;
      */
-    public boolean mobileNumber(String mobNumber) {
+    public boolean mobileNumber(String mobNumber)throws UserException {
         Pattern patternMobile = Pattern.compile("^[0-9]{2}[ ][0-9]{10}$");
-        return patternMobile.matcher(mobNumber).matches();
+        try {
+            return patternMobile.matcher(mobNumber).matches();
+        } catch (Exception e){
+            throw new UserException("Enter proper mobile number");
+        }
     }
     /**
      * This method is for compiling the input pattern for password
      * 8 character and match with pattern and return true;
      */
-    public boolean password(String password) {
+    public boolean password(String password)throws UserException {
         Pattern patternPass = Pattern.compile("[A-Za-z]{8,}");
-        return patternPass.matcher(password).matches();
+        try {
+            return patternPass.matcher(password).matches();
+        }catch (Exception e){
+            throw new UserException("Enter minimum 8 character");
+        }
+
     }
     /**
      * This method is for compiling the input pattern for password
      * 8 character and one upper case char match with pattern and return true;
      */
-    public boolean upperCasePassword(String upperCase) {
+    public boolean upperCasePassword(String upperCase)throws UserException {
         Pattern patternPass1 = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z]).+${8,}");
-        return patternPass1.matcher(upperCase).matches();
+        try {
+            return patternPass1.matcher(upperCase).matches();
+        }catch (Exception e){
+            throw new UserException("Enter minimum one upper case character");
+        }
+
     }
     /**
      * This method is for compiling the input pattern for password min 8 character,
      *  one upper case char, one numeric match with pattern and return true;
      */
-    public boolean numericPassword(String numeric) {
+    public boolean numericPassword(String numeric)throws UserException {
         Pattern patternPass2 = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9]).+${8,}");
-        return patternPass2.matcher(numeric).matches();
+        try {
+            return patternPass2.matcher(numeric).matches();
+        }catch (Exception e){
+            throw new UserException("Enter 1 upper case character and one numeric value");
+        }
+
     }
     /**
      * This method is for compiling the input pattern for password min 8 character,
      * one upper case char, one numeric and one special char match with pattern and return true;
      */
-    public boolean specialCharacterPassword(String character) {
+    public boolean specialCharacterPassword(String character)throws UserException {
         Pattern patternPass3 = Pattern.compile("^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[-+_!@#$%^&*.,?]).+${8,}");
-        return patternPass3.matcher(character).matches();
+        try {
+            return patternPass3.matcher(character).matches();
+        }catch (Exception e){
+            throw new UserException("Enter exactly one special character");
+        }
     }
 
     /**

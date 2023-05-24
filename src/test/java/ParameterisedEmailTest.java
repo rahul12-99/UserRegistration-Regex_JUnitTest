@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Regex;
 import org.junit.Test;
+import org.junit.UserException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -43,7 +44,7 @@ public class ParameterisedEmailTest {
      * This is tested for all given email as expected
      */
     @Test
-    public void givenEmail_WhenTested_ShouldPassAsExpected() {
+    public void givenEmail_WhenTested_ShouldPassAsExpected() throws UserException {
         Regex regex = new Regex();
         boolean result = regex.emailId(this.emailToTest);
         Assert.assertEquals(this.expectedResult, result);
